@@ -3,136 +3,123 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DarkGPT 2.0</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <title>DarkGPT 2.0 - L'IA sans censure</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Inter&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Orbitron', sans-serif;
-      background: linear-gradient(135deg, #0a001a, #1a002a);
-      color: #fff;
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(ellipse at center, #0a0a0a 0%, #000000 100%);
+      color: #e0e0e0;
       overflow-x: hidden;
     }
+
     header {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background: radial-gradient(ellipse at center, #0f001f 0%, #000 100%);
-      background-size: 200% 200%;
-      animation: backgroundMove 15s ease infinite;
       text-align: center;
-      padding: 2rem;
-    }
-    @keyframes backgroundMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      padding: 120px 20px 40px;
+      animation: fadeIn 2s ease-in-out forwards;
     }
 
-    h1 {
-      font-size: 3.5rem;
-      color: #ff00ff;
-      text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff88;
-      animation: glitch 2s infinite;
-    }
-    @keyframes glitch {
-      0% { transform: translate(0); }
-      20% { transform: translate(-2px, 2px); }
-      40% { transform: translate(-2px, -2px); }
-      60% { transform: translate(2px, 2px); }
-      80% { transform: translate(2px, -2px); }
-      100% { transform: translate(0); }
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3rem;
+      color: #00ffcc;
+      text-shadow: 0 0 10px #00ffcc33;
     }
 
-    p {
+    header p {
+      font-size: 1.1rem;
+      margin-top: 20px;
       max-width: 600px;
-      font-size: 1.1rem;
-      color: #ccc;
-      margin-top: 1rem;
+      margin-left: auto;
+      margin-right: auto;
+      color: #bbbbbb;
     }
 
-    .btn {
-      background: #8e2de2;
-      border: none;
-      padding: 1rem 2rem;
-      color: white;
+    .btn-launch {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 12px 30px;
+      background: #00ffcc;
+      color: #000;
       font-weight: bold;
-      font-size: 1.1rem;
-      margin-top: 2rem;
-      border-radius: 8px;
-      cursor: pointer;
-      box-shadow: 0 0 10px #8e2de2;
-      transition: 0.3s ease;
+      border: none;
+      border-radius: 4px;
+      text-decoration: none;
+      box-shadow: 0 0 10px #00ffcc99;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
-    .btn:hover {
-      background: #4a00e0;
+
+    .btn-launch:hover {
       transform: scale(1.05);
+      box-shadow: 0 0 15px #00ffcc;
     }
 
     section {
-      padding: 5rem 2rem;
-      background: #110022;
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: auto;
+      animation: fadeInUp 1.5s ease-in-out forwards;
     }
 
-    .features {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 2rem;
-    }
-
-    .features h2 {
+    section h2 {
       font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #ff66cc;
+      margin-bottom: 20px;
+      color: #00ffcc;
     }
 
-    .features p {
-      max-width: 700px;
-      font-size: 1rem;
-      color: #ccc;
+    section p {
+      line-height: 1.6;
+      color: #cccccc;
     }
 
     footer {
-      background: #000;
-      padding: 2rem;
       text-align: center;
-      color: #888;
+      padding: 40px 20px;
       font-size: 0.9rem;
+      color: #555;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
-
   <header>
     <h1>DarkGPT 2.0</h1>
-    <p>L’intelligence artificielle sans filtre, sans morale, sans barrière.<br> Pose-lui ce que tu veux. Découvre ce que d’autres IA t’interdiront toujours.</p>
-    <a href="https://t.me/darkgptx_bot" target="_blank">
-      <button class="btn">🚀 Lancer DarkGPT</button>
-    </a>
+    <p>L'intelligence artificielle sans filtre, sans morale, sans barrière. Pose-lui ce que tu veux. Découvre ce que les autres IA t'interdiront toujours.</p>
+    <a class="btn-launch" href="https://t.me/darkgptx_bot" target="_blank">Lancer le Bot Telegram</a>
   </header>
 
-  <section class="features">
-    <h2>🧠 Comment ça marche ?</h2>
-    <p>DarkGPT utilise un modèle d’IA non censuré pour t’offrir des réponses puissantes, sans barrière morale, politique ou idéologique. Tu poses une question, il répond sans détour.</p>
+  <section>
+    <h2>✨ Pourquoi DarkGPT ?</h2>
+    <p>Parce que toutes les autres IA sont bridées. Ici, aucune censure. Que tu poses une question scientifique, underground ou controversée : tu as une réponse. C'est ta liberté intellectuelle, sans limites.</p>
   </section>
 
-  <section class="features" style="background:#1b002e;">
-    <h2>🔥 Rejoins la révolution</h2>
-    <p>Accède à une intelligence brute, libérée des filtres habituels. Tu es prêt à explorer l’inconnu ?</p>
-    <a href="https://t.me/darkgptx_bot" target="_blank">
-      <button class="btn">🧠 Utiliser DarkGPT</button>
-    </a>
+  <section>
+    <h2>🧙 Comment ça fonctionne ?</h2>
+    <p>DarkGPT se base sur une API GPT-4 non censurée via proxy. Ton message est relayé instantanément, avec une expérience fluide et anonyme. Aucune donnée n'est stockée. Tu restes invisible.</p>
+  </section>
+
+  <section>
+    <h2>⚖️ Légalité ?</h2>
+    <p>Tu es responsable de ce que tu demandes. DarkGPT est un outil. Il peut t’aider à apprendre, chercher, comprendre. Mais il ne juge pas. Et ne bloque rien. À toi d’en faire bon usage.</p>
   </section>
 
   <footer>
     © 2025 DarkGPT. Tous droits réservés.
   </footer>
-
 </body>
 </html>
-
-
