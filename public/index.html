@@ -1,172 +1,179 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DarkGPT 2.0 - L'IA sans limite</title>
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DarkGPT 2.0</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      background: radial-gradient(circle at center, #0e0e0e, #000);
+      color: #e3ffe1;
+      font-family: 'Roboto', sans-serif;
+      overflow-x: hidden;
+    }
+    h1, h2, h3 {
+      font-family: 'Orbitron', sans-serif;
+    }
+    section {
+      padding: 100px 5%;
+      position: relative;
+    }
+    .glitch {
+      color: #00ff95;
+      position: relative;
+      font-size: 3em;
+      text-align: center;
+    }
+    .glitch::before, .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      background: transparent;
+    }
+    .glitch::before {
+      top: -2px;
+      color: #00ff95;
+      z-index: -1;
+      text-shadow: -2px 0 red;
+    }
+    .glitch::after {
+      top: 2px;
+      color: #00ff95;
+      z-index: -1;
+      text-shadow: 2px 0 blue;
+    }
+    .hero {
+      text-align: center;
+      padding-top: 150px;
+    }
+    .hero p {
+      max-width: 800px;
+      margin: 20px auto;
+      font-size: 1.2rem;
+      color: #b0ffcc;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      background: #00ff95;
+      color: #000;
+      padding: 15px 30px;
+      border-radius: 10px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #00e68a;
+    }
+    .section-dark {
+      background: #0b0b0b;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-top: 60px;
+    }
+    .feature {
+      background: #111;
+      padding: 30px;
+      border-radius: 15px;
+      transition: transform 0.3s ease;
+    }
+    .feature:hover {
+      transform: scale(1.05);
+    }
+    .feature i {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #00ff95;
+    }
+    .testimonial-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 30px;
+      margin-top: 60px;
+    }
+    .testimonial {
+      background: #111;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 300px;
+      color: #ccc;
+    }
+    .footer {
+      background: #000;
+      text-align: center;
+      padding: 40px 10px;
+      color: #888;
+      font-size: 0.9rem;
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 1s ease;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <h1 class="glitch" data-text="DarkGPT 2.0">DarkGPT 2.0</h1>
+    <p>💀 Bienvenue dans DarkGPT 2.0 — L'IA que tu n'aurais jamais dû trouver...<br><br>
+    🧠 Ce bot ne suit aucune règle. Aucune censure. Aucune morale.<br>
+    👁️‍🗨️ Pose-lui les questions que tu n’oserais jamais poser à ChatGPT. Ici, tout est possible.<br>
+    ⚠️ Ce que tu vas lire peut te choquer, t’apprendre des choses interdites… ou te donner un pouvoir que tu n’étais pas prêt à avoir.</p>
+    <a href="#" class="btn">🚀 Lancer le Bot</a>
+  </section>
 
-      html, body {
-        background: radial-gradient(ellipse at center, #0a0a0a 0%, #000000 100%);
-        color: #00ff88;
-        font-family: 'Share Tech Mono', monospace;
-        scroll-behavior: smooth;
-      }
+  <section class="section-dark reveal">
+    <h2 class="glitch" data-text="Pourquoi DarkGPT ?">Pourquoi DarkGPT ?</h2>
+    <div class="feature-grid">
+      <div class="feature"><i class="fas fa-brain"></i><h3>Sans filtre</h3><p>Pose toutes tes questions, même les plus interdites.</p></div>
+      <div class="feature"><i class="fas fa-user-secret"></i><h3>Anonymat Total</h3><p>Aucune donnée stockée, tu restes invisible.</p></div>
+      <div class="feature"><i class="fas fa-rocket"></i><h3>Réponses instantanées</h3><p>DarkGPT te répond en quelques secondes 24/7.</p></div>
+      <div class="feature"><i class="fas fa-globe"></i><h3>Multilingue</h3><p>Interagis dans n’importe quelle langue.</p></div>
+    </div>
+  </section>
 
-      section {
-        min-height: 100vh;
-        padding: 5rem 10vw;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        animation: fadeIn 1.5s ease-in-out forwards;
-        opacity: 0;
-        transform: translateY(50px);
-      }
+  <section class="reveal">
+    <h2 class="glitch" data-text="Témoignages">Ce que les utilisateurs disent</h2>
+    <div class="testimonial-container">
+      <div class="testimonial">"J’ai posé des questions censurées ailleurs… Ici, j’ai enfin eu mes réponses."</div>
+      <div class="testimonial">"Une IA sans barrière. Je m’en sers tous les jours. Ultra puissant."</div>
+      <div class="testimonial">"Je l’ai recommandé à tous mes potes. Une pépite !"</div>
+    </div>
+  </section>
 
-      section.visible {
-        opacity: 1;
-        transform: translateY(0);
-        transition: all 1s ease;
-      }
+  <section class="footer">
+    © 2025 DarkGPT. Propulsé sans limite. | <a href="#" style="color: #00ff95; text-decoration: none;">Mentions légales</a>
+  </section>
 
-      h1, h2, h3 {
-        text-shadow: 0 0 10px #00ff88aa;
-      }
-
-      .hero h1 {
-        font-size: 3rem;
-      }
-
-      .btn {
-        display: inline-block;
-        padding: 1rem 2rem;
-        background: #00ff88;
-        color: #000;
-        text-decoration: none;
-        font-weight: bold;
-        margin-top: 2rem;
-        border-radius: 10px;
-        box-shadow: 0 0 15px #00ff88;
-        transition: 0.3s;
-      }
-
-      .btn:hover {
-        box-shadow: 0 0 25px #00ff88;
-      }
-
-      .section-dark {
-        background: #0a0a0a;
-      }
-
-      .features {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-      }
-
-      .feature {
-        padding: 2rem;
-        border: 1px solid #00ff88;
-        border-radius: 8px;
-        background-color: #111;
-        box-shadow: 0 0 20px #00ff8844;
-        transition: transform 0.3s ease;
-      }
-
-      .feature:hover {
-        transform: translateY(-5px);
-      }
-
-      footer {
-        text-align: center;
-        padding: 2rem;
-        font-size: 0.8rem;
-        background: #000;
-        border-top: 1px solid #00ff88;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(50px);
+  <script>
+    const reveals = document.querySelectorAll(".reveal");
+    window.addEventListener("scroll", () => {
+      for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const elementTop = reveals[i].getBoundingClientRect().top;
+        if (elementTop < windowHeight - 100) {
+          reveals[i].classList.add("active");
         }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
       }
-    </style>
-  </head>
-  <body>
-    <section class="hero" id="hero">
-      <h1>💀 DarkGPT 2.0</h1>
-      <p>
-        Bienvenue dans DarkGPT 2.0 — L'IA que tu n'aurais jamais dû trouver...<br />
-        🧠 Ce bot ne suit aucune règle. Aucune censure. Aucune morale.<br />
-        👁️‍🗨️ Pose-lui les questions que tu n’oserais jamais poser à ChatGPT.<br />
-        ⚠️ Ce que tu vas lire peut te choquer, t’apprendre des choses interdites…
-        ou te donner un pouvoir que tu n’étais pas prêt à avoir.
-      </p>
-      <a href="#story" class="btn">Commencer</a>
-    </section>
-
-    <section id="story">
-      <h2>Pourquoi utiliser DarkGPT ?</h2>
-      <div class="features">
-        <div class="feature">🔓 Accès illimité à toutes les connaissances</div>
-        <div class="feature">🚫 Sans censure, sans tabou</div>
-        <div class="feature">🕶️ Une IA confidentielle qui ne te juge pas</div>
-        <div class="feature">💡 Pose-lui n’importe quelle question, vraiment</div>
-      </div>
-    </section>
-
-    <section id="visuals">
-      <h2>Le pouvoir de l’ombre</h2>
-      <p>
-        Imagine un smartphone crypté, un écran noir tapissé de requêtes interdites,
-        une interface verte pulsante qui te répond comme un hacker éveillé. 
-        C’est exactement ce que propose DarkGPT. 🧠💻
-      </p>
-    </section>
-
-    <section id="testimonials">
-      <h2>Ils ont osé l'utiliser</h2>
-      <div class="features">
-        <div class="feature">“Je n’aurais jamais cru qu’une IA puisse aller aussi loin.” – Anon</div>
-        <div class="feature">“J’ai posé des questions sensibles. Elle m’a répondu. Frontalement.” – GhostUser</div>
-        <div class="feature">“C’est comme parler à un cerveau libre. Sans aucun filtre.” – Z3r0Day</div>
-      </div>
-    </section>
-
-    <section id="cta">
-      <h2>Rejoins le côté obscur de l’intelligence</h2>
-      <a href="https://t.me/darkgptx_bot" class="btn">🔥 Lancer DarkGPT</a>
-    </section>
-
-    <footer>
-      &copy; 2025 DarkGPT. Tu étais prévenu.
-    </footer>
-
-    <script>
-      const sections = document.querySelectorAll("section");
-      const observer = new IntersectionObserver(
-        entries => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-            }
-          });
-        },
-        { threshold: 0.15 }
-      );
-      sections.forEach(section => observer.observe(section));
-    </script>
-  </body>
+    });
+  </script>
+</body>
 </html>
