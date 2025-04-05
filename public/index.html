@@ -1,155 +1,136 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DarkGPT 2.0</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
+    :root {
+      --bg-dark: #0a0a0a;
+      --green: #00ff99;
+      --text: #f0f0f0;
+      --muted: #888;
+      --accent: #00ffcc;
+    }
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
     body {
       font-family: 'Inter', sans-serif;
-      background: radial-gradient(circle at top left, #0d0d0d, #000);
-      color: #fff;
+      background: radial-gradient(circle at center, #0f0f0f, #000);
+      color: var(--text);
       overflow-x: hidden;
+      scroll-behavior: smooth;
     }
     header {
-      padding: 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #111;
-      border-bottom: 1px solid #222;
-    }
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #f00;
-      text-transform: uppercase;
-    }
-    .btn-main {
-      background: #f00;
-      color: #fff;
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      font-weight: bold;
-      transition: transform 0.2s;
-    }
-    .btn-main:hover {
-      transform: scale(1.05);
-    }
-    .hero {
+      height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 6rem 2rem;
-      background: linear-gradient(145deg, #000, #111);
-      min-height: 100vh;
+      padding: 2rem;
     }
-    .hero h1 {
+    h1 {
       font-size: 3rem;
-      margin-bottom: 1rem;
+      color: var(--green);
+      text-shadow: 0 0 5px var(--green);
     }
-    .hero span {
-      color: #f00;
-      text-shadow: 0 0 10px #f00;
-    }
-    .hero p {
+    p.subtitle {
       max-width: 600px;
-      margin-bottom: 2rem;
-      color: #ccc;
+      color: var(--muted);
+      margin-top: 1rem;
     }
-    .section {
-      padding: 5rem 2rem;
-      text-align: center;
+    .btn-start {
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      background: var(--green);
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.3s;
     }
-    .section.dark {
-      background: #111;
+    .btn-start:hover {
+      transform: scale(1.05);
     }
-    .section h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
+    section {
+      padding: 6rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
     }
-    .section p {
-      max-width: 800px;
-      margin: 0 auto;
-      color: #bbb;
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    .feature {
+      display: flex;
       gap: 2rem;
+      flex-wrap: wrap;
       margin-top: 2rem;
     }
-    .card {
-      background: #1a1a1a;
-      padding: 2rem;
-      border-radius: 12px;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 20px #f00;
-    }
-    .glow {
-      animation: glow 2s infinite alternate;
-    }
-    @keyframes glow {
-      from { text-shadow: 0 0 10px #f00; }
-      to { text-shadow: 0 0 20px #f00, 0 0 30px #f00; }
+    .feature div {
+      background: #111;
+      padding: 1.5rem;
+      border-radius: 10px;
+      flex: 1 1 250px;
+      box-shadow: 0 0 10px #000;
     }
     footer {
       text-align: center;
       padding: 2rem;
-      font-size: 0.9rem;
-      color: #666;
-      border-top: 1px solid #222;
-      background: #0d0d0d;
+      color: var(--muted);
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">DarkGPT</div>
-    <button class="btn-main">Lancer le Bot</button>
+    <h1>DarkGPT 2.0</h1>
+    <p class="subtitle">L'intelligence artificielle sans filtre, pour ceux qui veulent tout savoir. Aucune barrière. Aucun tabou.</p>
+    <a href="https://t.me/darkgptx_bot"><button class="btn-start">🚀 Lancer DarkGPT</button></a>
   </header>
 
-  <section class="hero">
-    <h1>L'IA qui n'a <span class="glow">aucune limite</span></h1>
-    <p>DarkGPT est l'assistant ultime. Sans filtre. Sans restriction. Une IA pensée pour explorer sans frontière.</p>
-    <button class="btn-main">Commencer maintenant</button>
-  </section>
-
-  <section class="section dark">
-    <h2>Pourquoi DarkGPT ?</h2>
-    <p>Disponible sur Telegram, WhatsApp et bientôt plus. Pose-lui n'importe quelle question. Obtiens une réponse claire et directe.</p>
-    <div class="grid">
-      <div class="card">💡 Réponses instantanées 24/7</div>
-      <div class="card">🚀 Simple, rapide, sans censure</div>
-      <div class="card">🧠 Accès illimité aux connaissances</div>
-      <div class="card">🔐 Respect total de ta vie privée</div>
+  <section>
+    <h2>🧠 Pourquoi choisir DarkGPT ?</h2>
+    <div class="feature">
+      <div><strong>Sans censure</strong><br/>Pose n'importe quelle question, obtiens une vraie réponse.</div>
+      <div><strong>Style hacker assumé</strong><br/>Interface sombre, impactante, efficace.</div>
+      <div><strong>Accès instantané</strong><br/>Via Telegram 24h/24, 7j/7, sans installation complexe.</div>
     </div>
   </section>
 
-  <section class="section">
-    <h2>Ce que les utilisateurs disent</h2>
-    <div class="grid">
-      <div class="card">"Je gagne un temps fou. Et enfin une IA qui me comprend sans filtre !"</div>
-      <div class="card">"Idéal pour le boulot, les mails, les idées, tout est plus simple."</div>
-      <div class="card">"Je l’ai recommandé à toute ma team. Une pépite !"</div>
+  <section>
+    <h2>⚙️ Fonctionnalités puissantes</h2>
+    <div class="feature">
+      <div><strong>Compréhension totale</strong><br/>DarkGPT comprend le contexte, les nuances, et ne juge pas.</div>
+      <div><strong>Rapide et fluide</strong><br/>Basé sur GPT-4, optimisé pour la vitesse et la précision.</div>
+      <div><strong>Personnalisable</strong><br/>Des mises à jour régulières, adapté à tes besoins.</div>
     </div>
   </section>
 
   <footer>
-    © 2025 DarkGPT. Propulsé sans limite.
+    <p>&copy; 2025 DarkGPT. Inspiré par les limites de l'interdit.</p>
   </footer>
+
+  <script>
+    // Scroll reveal effect
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+    document.querySelectorAll('section').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 </body>
 </html>
