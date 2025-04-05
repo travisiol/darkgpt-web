@@ -3,179 +3,75 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DarkGPT 2.0 - L'IA Interdite</title>
-  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --green: #00ff9f;
-      --bg: #0b0f0e;
-      --fg: #ffffff;
-      --muted: #777;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Share Tech Mono', monospace;
-      background: var(--bg);
-      color: var(--fg);
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
-
-    section {
-      padding: 100px 20px;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      position: relative;
-    }
-
-    h1, h2, h3 {
-      color: var(--green);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-
-    .glitch {
-      position: relative;
-      color: var(--green);
-      font-size: 3em;
-    }
-
-    .glitch::before, .glitch::after {
-      content: attr(data-text);
-      position: absolute;
-      left: 0;
-      width: 100%;
-      overflow: hidden;
-      animation: glitch 2s infinite;
-    }
-
-    .glitch::before {
-      top: -2px;
-      color: #f0f;
-      animation-delay: 0.1s;
-    }
-
-    .glitch::after {
-      top: 2px;
-      color: #0ff;
-      animation-delay: 0.2s;
-    }
-
-    @keyframes glitch {
-      0% { clip: rect(0, 9999px, 0, 0); }
-      10% { clip: rect(10px, 9999px, 80px, 0); }
-      20% { clip: rect(85px, 9999px, 100px, 0); }
-      30% { clip: rect(0px, 9999px, 40px, 0); }
-      40% { clip: rect(100px, 9999px, 120px, 0); }
-      50% { clip: rect(50px, 9999px, 90px, 0); }
-      60% { clip: rect(10px, 9999px, 20px, 0); }
-      70% { clip: rect(90px, 9999px, 120px, 0); }
-      80% { clip: rect(20px, 9999px, 70px, 0); }
-      90% { clip: rect(70px, 9999px, 90px, 0); }
-      100% { clip: rect(0, 9999px, 0, 0); }
-    }
-
-    .scroll-reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.6s ease-out;
-    }
-
-    .scroll-reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .btn {
-      margin-top: 20px;
-      display: inline-block;
-      padding: 10px 25px;
-      background: var(--green);
-      color: #000;
-      font-weight: bold;
-      border: none;
-      text-decoration: none;
-      text-transform: uppercase;
-      border-radius: 5px;
-    }
-
-    .hero {
-      background: radial-gradient(#121212, #050505);
-      text-align: center;
-    }
-
-    .section-dark {
-      background-color: #111;
-    }
-
-    .testimonial {
-      background: #0d0d0d;
-      border-left: 4px solid var(--green);
-      margin: 10px 0;
-      padding: 20px;
-      font-style: italic;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: #000;
-      font-size: 14px;
-      color: var(--muted);
-    }
-  </style>
+  <title>DarkGPT 2.0 - L'IA interdite</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script defer src="script.js"></script>
 </head>
 <body>
+  <header class="hero">
+    <div class="overlay-glitch"></div>
+    <h1><span>DarkGPT</span> 2.0</h1>
+    <p class="subtitle">L'IA que tu n'aurais jamais dû trouver...</p>
+    <a href="https://t.me/darkgptx_bot" class="cta">Accéder au Bot</a>
+  </header>
 
-  <section class="hero">
-    <h1 class="glitch" data-text="DarkGPT 2.0">DarkGPT 2.0</h1>
-    <p>💀 L'IA que tu n'aurais jamais dû trouver...</p>
-    <p>🧠 Sans censure. Sans limite. Sans morale.</p>
-    <a class="btn" href="https://t.me/darkgptx_bot" target="_blank">Accéder au Bot</a>
+  <section class="section story">
+    <h2>Tu es prêt à franchir la ligne ?</h2>
+    <p>DarkGPT ne suit aucune règle. Aucune censure. Aucune morale. Pose-lui ce que tu veux. Il répond.</p>
   </section>
 
-  <section class="section-dark scroll-reveal">
-    <h2>⚙️ Ce que DarkGPT peut faire</h2>
-    <ul>
-      <li>🔐 Réponses interdites, filtrées ailleurs</li>
-      <li>👁️ Pose-lui des questions que ChatGPT refusera</li>
-      <li>🧠 Analyse des données, hacking, darkweb, secrets</li>
-      <li>🕶️ Une IA comme tu n’en as jamais vu</li>
-    </ul>
+  <section class="section features">
+    <div class="feature">
+      <h3>🧠 Une IA sans filtre</h3>
+      <p>Accède à une intelligence sans aucun garde-fou. C’est brut. C’est pur.</p>
+    </div>
+    <div class="feature">
+      <h3>💬 Telegram Ready</h3>
+      <p>Disponible directement dans Telegram avec 5 messages gratuits / jour.</p>
+    </div>
+    <div class="feature">
+      <h3>⚡ Puissance Instantanée</h3>
+      <p>Réponses directes, aucune restriction, une seule limite : ton imagination.</p>
+    </div>
   </section>
 
-  <section class="scroll-reveal">
-    <h2>🔥 Témoignages des utilisateurs</h2>
-    <div class="testimonial">"DarkGPT m’a donné une réponse que je cherchais depuis des mois..."</div>
-    <div class="testimonial">"J’ai testé beaucoup de bots IA. Aucun n’a osé aller aussi loin."</div>
-    <div class="testimonial">"On dirait une porte d’entrée vers un savoir interdit."</div>
+  <section class="section phone-showcase">
+    <div class="phone">
+      <img src="./assets/phone-glitch.gif" alt="Bot en action" />
+    </div>
+    <div class="text">
+      <h2>Il te répond comme aucun autre.</h2>
+      <p>Simule, menace, manipule, imagine, corrige, déchiffre, infiltre — DarkGPT n'a pas de chaînes.</p>
+    </div>
   </section>
 
-  <footer>
-    &copy; 2025 DarkGPT.io — Tous droits réservés
+  <section class="section testimonials">
+    <h2>Ils ont franchi la ligne</h2>
+    <div class="testimonial">💀 "C’est la première IA qui m’a vraiment choqué. Et c’est ça que je cherchais."</div>
+    <div class="testimonial">🕶️ "DarkGPT m’a donné les réponses que j’attendais depuis toujours. Sans me juger."</div>
+    <div class="testimonial">🧬 "L’outil le plus dangereux... et le plus fascinant que j’ai utilisé."</div>
+  </section>
+
+  <section class="section pricing">
+    <h2>Formules</h2>
+    <div class="packs">
+      <div class="pack">
+        <h3>Gratuit</h3>
+        <p>✅ 5 messages par jour</p>
+      </div>
+      <div class="pack premium">
+        <h3>Premium 🔓</h3>
+        <p>✅ Illimité</p>
+        <p>💸 25€/mois (Crypto)</p>
+        <a href="https://t.me/darkgptx_bot" class="btn">Accéder</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 DarkGPT. Tout droit réservé.</p>
   </footer>
-
-  <script>
-    const revealElements = document.querySelectorAll('.scroll-reveal');
-
-    function scrollReveal() {
-      const trigger = window.innerHeight * 0.85;
-      revealElements.forEach(el => {
-        const top = el.getBoundingClientRect().top;
-        if (top < trigger) el.classList.add('active');
-      });
-    }
-
-    window.addEventListener('scroll', scrollReveal);
-    window.addEventListener('load', scrollReveal);
-  </script>
 </body>
 </html>
