@@ -3,86 +3,136 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="DarkGPT 2.0 : l'intelligence artificielle sans censure, sans barrière. Pose-lui ce que tu veux." />
   <title>DarkGPT 2.0</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      margin: 0;
-      padding: 0;
-      background: #000;
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(135deg, #0a001a, #1a002a);
       color: #fff;
-      font-family: 'Roboto', sans-serif;
+      overflow-x: hidden;
+    }
+    header {
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
-      height: 100vh;
-      overflow: hidden;
+      align-items: center;
+      background: radial-gradient(ellipse at center, #0f001f 0%, #000 100%);
+      background-size: 200% 200%;
+      animation: backgroundMove 15s ease infinite;
+      text-align: center;
+      padding: 2rem;
+    }
+    @keyframes backgroundMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 3rem;
-      background: linear-gradient(to right, #8a2be2, #ff00ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: glitch 1.5s infinite;
+      font-size: 3.5rem;
+      color: #ff00ff;
+      text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff88;
+      animation: glitch 2s infinite;
+    }
+    @keyframes glitch {
+      0% { transform: translate(0); }
+      20% { transform: translate(-2px, 2px); }
+      40% { transform: translate(-2px, -2px); }
+      60% { transform: translate(2px, 2px); }
+      80% { transform: translate(2px, -2px); }
+      100% { transform: translate(0); }
     }
 
     p {
-      font-size: 1.2rem;
-      color: #ccc;
       max-width: 600px;
-      text-align: center;
-      margin: 20px;
+      font-size: 1.1rem;
+      color: #ccc;
+      margin-top: 1rem;
     }
 
     .btn {
-      padding: 15px 30px;
-      font-size: 1.2rem;
-      background: #8a2be2;
-      color: #fff;
+      background: #8e2de2;
       border: none;
+      padding: 1rem 2rem;
+      color: white;
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-top: 2rem;
       border-radius: 8px;
       cursor: pointer;
-      transition: transform 0.3s, background 0.3s;
-      text-decoration: none;
+      box-shadow: 0 0 10px #8e2de2;
+      transition: 0.3s ease;
     }
-
     .btn:hover {
+      background: #4a00e0;
       transform: scale(1.05);
-      background: #a943ff;
     }
 
-    @keyframes glitch {
-      0% {
-        text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff;
-      }
-      50% {
-        text-shadow: -2px 2px #ff00ff, 2px -2px #00ffff;
-      }
-      100% {
-        text-shadow: 2px -2px #ff00ff, -2px 2px #00ffff;
-      }
+    section {
+      padding: 5rem 2rem;
+      background: #110022;
     }
 
-    .bg-glow {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle at center, rgba(138,43,226,0.1), transparent);
-      z-index: -1;
+    .features {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 2rem;
+    }
+
+    .features h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #ff66cc;
+    }
+
+    .features p {
+      max-width: 700px;
+      font-size: 1rem;
+      color: #ccc;
+    }
+
+    footer {
+      background: #000;
+      padding: 2rem;
+      text-align: center;
+      color: #888;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
-  <div class="bg-glow"></div>
-  <h1>DarkGPT 2.0</h1>
-  <p>L'intelligence artificielle sans filtre, sans barrière. Pose-lui ce que tu veux. Découvre ce que d'autres IA t'interdiront toujours.</p>
-  <a href="https://t.me/darkgptx_bot" target="_blank" class="btn">🚀 Lancer le Bot</a>
+
+  <header>
+    <h1>DarkGPT 2.0</h1>
+    <p>L’intelligence artificielle sans filtre, sans morale, sans barrière.<br> Pose-lui ce que tu veux. Découvre ce que d’autres IA t’interdiront toujours.</p>
+    <a href="https://t.me/darkgptx_bot" target="_blank">
+      <button class="btn">🚀 Lancer DarkGPT</button>
+    </a>
+  </header>
+
+  <section class="features">
+    <h2>🧠 Comment ça marche ?</h2>
+    <p>DarkGPT utilise un modèle d’IA non censuré pour t’offrir des réponses puissantes, sans barrière morale, politique ou idéologique. Tu poses une question, il répond sans détour.</p>
+  </section>
+
+  <section class="features" style="background:#1b002e;">
+    <h2>🔥 Rejoins la révolution</h2>
+    <p>Accède à une intelligence brute, libérée des filtres habituels. Tu es prêt à explorer l’inconnu ?</p>
+    <a href="https://t.me/darkgptx_bot" target="_blank">
+      <button class="btn">🧠 Utiliser DarkGPT</button>
+    </a>
+  </section>
+
+  <footer>
+    © 2025 DarkGPT. Tous droits réservés.
+  </footer>
+
 </body>
 </html>
+
 
