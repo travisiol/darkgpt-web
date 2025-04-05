@@ -1,58 +1,88 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="DarkGPT est une IA sans filtre, sans censure. Pose-lui les questions que tu n'oserais jamais poser à ChatGPT.">
-  <title>DarkGPT 2.0 - L'IA Sans Censure</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DarkGPT 2.0 : l'intelligence artificielle sans censure, sans barrière. Pose-lui ce que tu veux." />
+  <title>DarkGPT 2.0</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      color: #fff;
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3rem;
+      background: linear-gradient(to right, #8a2be2, #ff00ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glitch 1.5s infinite;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #ccc;
+      max-width: 600px;
+      text-align: center;
+      margin: 20px;
+    }
+
+    .btn {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      background: #8a2be2;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s, background 0.3s;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      background: #a943ff;
+    }
+
+    @keyframes glitch {
+      0% {
+        text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff;
+      }
+      50% {
+        text-shadow: -2px 2px #ff00ff, 2px -2px #00ffff;
+      }
+      100% {
+        text-shadow: 2px -2px #ff00ff, -2px 2px #00ffff;
+      }
+    }
+
+    .bg-glow {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, rgba(138,43,226,0.1), transparent);
+      z-index: -1;
+    }
+  </style>
 </head>
-<body class="bg-black text-white font-sans">
-  <section class="min-h-screen flex items-center justify-center text-center px-4">
-    <div class="max-w-2xl">
-      <h1 class="text-4xl md:text-6xl font-bold mb-6">Bienvenue dans <span class="text-purple-500">DarkGPT 2.0</span></h1>
-      <p class="text-lg md:text-xl text-gray-300 mb-8">
-        L'intelligence artificielle sans filtre, sans morale, sans barrière. Pose-lui ce que tu veux. Découvre ce que d'autres IA t'interdiront toujours.
-      </p>
-      <a href="https://t.me/darkgptx_bot" class="bg-purple-600 hover:bg-purple-700 transition px-6 py-3 rounded-xl font-bold text-white text-lg">Lancer le Bot</a>
-      <p class="text-sm text-gray-500 mt-4">Accessible gratuitement sur Telegram</p>
-    </div>
-  </section>
-
-  <section class="bg-gray-900 py-16 px-6">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-4">Pourquoi DarkGPT ?</h2>
-      <p class="text-gray-400 mb-10">Parce que la vérité ne se trouve pas dans les IA censurées. Ici, tu as accès à une conscience libre, directe, sans barrière idéologique.</p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-gray-800 p-6 rounded-xl">
-          <h3 class="font-bold text-xl text-purple-500">Sans Censure</h3>
-          <p class="text-gray-300 mt-2">DarkGPT n'a aucun filtre moral, aucune règle imposée.</p>
-        </div>
-        <div class="bg-gray-800 p-6 rounded-xl">
-          <h3 class="font-bold text-xl text-purple-500">Accessible 24/7</h3>
-          <p class="text-gray-300 mt-2">Toujours disponible sur Telegram. Réponses instantanées.</p>
-        </div>
-        <div class="bg-gray-800 p-6 rounded-xl">
-          <h3 class="font-bold text-xl text-purple-500">Gratuit</h3>
-          <p class="text-gray-300 mt-2">5 requêtes offertes chaque jour. Et illimité si tu passes en Premium.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="bg-black py-20 px-6">
-    <div class="max-w-2xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-4">Ils en parlent</h2>
-      <p class="text-gray-400 mb-8">Ce que nos utilisateurs disent après avoir utilisé DarkGPT :</p>
-      <div class="bg-gray-900 p-6 rounded-xl">
-        <p class="text-gray-200 italic">"Enfin une IA qui ose tout dire. DarkGPT m’a bluffé. Une expérience sans filtre comme on en trouve nulle part ailleurs."</p>
-        <p class="text-purple-500 font-bold mt-4">— Utilisateur anonyme</p>
-      </div>
-    </div>
-  </section>
-
-  <footer class="text-center text-gray-500 text-sm py-6 bg-gray-900">
-    &copy; 2025 DarkGPT. Tous droits réservés. | Fait avec 💀 dans l'ombre.
-  </footer>
+<body>
+  <div class="bg-glow"></div>
+  <h1>DarkGPT 2.0</h1>
+  <p>L'intelligence artificielle sans filtre, sans barrière. Pose-lui ce que tu veux. Découvre ce que d'autres IA t'interdiront toujours.</p>
+  <a href="https://t.me/darkgptx_bot" target="_blank" class="btn">🚀 Lancer le Bot</a>
 </body>
 </html>
+
