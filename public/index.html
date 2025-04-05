@@ -1,136 +1,151 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DarkGPT 2.0</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg-dark: #0a0a0a;
-      --green: #00ff99;
-      --text: #f0f0f0;
-      --muted: #888;
-      --accent: #00ffcc;
-    }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: radial-gradient(circle at center, #0f0f0f, #000);
-      color: var(--text);
-      overflow-x: hidden;
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
       scroll-behavior: smooth;
+      font-family: 'Roboto', sans-serif;
+      background: radial-gradient(circle, #000 30%, #0a0a0a);
+      color: #e0e0e0;
+      overflow-x: hidden;
     }
-    header {
-      height: 100vh;
+    section {
+      padding: 100px 10%;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
+    }
+    h1, h2, h3 {
+      font-family: 'Orbitron', sans-serif;
+      color: #00ff88;
+      margin-bottom: 20px;
+    }
+    .intro {
       text-align: center;
-      padding: 2rem;
+      animation: fadeIn 1.5s ease-in-out;
     }
-    h1 {
-      font-size: 3rem;
-      color: var(--green);
-      text-shadow: 0 0 5px var(--green);
+    .glitch {
+      font-size: 2.5rem;
+      color: #00ff88;
+      position: relative;
+      display: inline-block;
     }
-    p.subtitle {
-      max-width: 600px;
-      color: var(--muted);
-      margin-top: 1rem;
+    .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      left: 2px; top: 2px;
+      color: #ff0066;
+      opacity: 0.7;
+      animation: glitch 1s infinite;
     }
-    .btn-start {
-      margin-top: 2rem;
-      padding: 1rem 2rem;
-      background: var(--green);
-      color: #000;
+    @keyframes glitch {
+      0% { transform: translate(0, 0); }
+      20% { transform: translate(-1px, 1px); }
+      40% { transform: translate(-2px, -1px); }
+      60% { transform: translate(1px, 2px); }
+      80% { transform: translate(2px, -2px); }
+      100% { transform: translate(0, 0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .section-dark {
+      background: linear-gradient(90deg, #0f0f0f 0%, #090909 100%);
+    }
+    .text-large {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+    .cta {
+      padding: 15px 30px;
       border: none;
-      border-radius: 8px;
+      background: #00ff88;
+      color: black;
       font-weight: bold;
+      font-size: 1.2rem;
+      border-radius: 10px;
       cursor: pointer;
-      transition: transform 0.3s;
+      transition: transform .2s;
     }
-    .btn-start:hover {
+    .cta:hover {
       transform: scale(1.05);
-    }
-    section {
-      padding: 6rem 2rem;
-      max-width: 1100px;
-      margin: auto;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
     }
     .feature {
       display: flex;
-      gap: 2rem;
+      gap: 60px;
+      align-items: center;
+      margin-top: 50px;
       flex-wrap: wrap;
-      margin-top: 2rem;
     }
-    .feature div {
+    .feature img {
+      max-width: 400px;
+      border-radius: 20px;
+    }
+    .testimonial {
       background: #111;
-      padding: 1.5rem;
+      padding: 30px;
+      margin: 20px 0;
       border-radius: 10px;
-      flex: 1 1 250px;
-      box-shadow: 0 0 10px #000;
+      border-left: 4px solid #00ff88;
     }
     footer {
+      background: black;
       text-align: center;
-      padding: 2rem;
-      color: var(--muted);
+      padding: 40px;
+      color: #555;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>DarkGPT 2.0</h1>
-    <p class="subtitle">L'intelligence artificielle sans filtre, pour ceux qui veulent tout savoir. Aucune barrière. Aucun tabou.</p>
-    <a href="https://t.me/darkgptx_bot"><button class="btn-start">🚀 Lancer DarkGPT</button></a>
-  </header>
 
-  <section>
-    <h2>🧠 Pourquoi choisir DarkGPT ?</h2>
-    <div class="feature">
-      <div><strong>Sans censure</strong><br/>Pose n'importe quelle question, obtiens une vraie réponse.</div>
-      <div><strong>Style hacker assumé</strong><br/>Interface sombre, impactante, efficace.</div>
-      <div><strong>Accès instantané</strong><br/>Via Telegram 24h/24, 7j/7, sans installation complexe.</div>
+<section class="intro">
+  <h1 class="glitch" data-text="DarkGPT 2.0">DarkGPT 2.0</h1>
+  <p class="text-large">💀 Bienvenue dans DarkGPT 2.0 — L'IA que tu n'aurais jamais dû trouver...</p>
+  <p class="text-large">🧠 Ce bot ne suit aucune règle. Aucune censure. Aucune morale.</p>
+  <p class="text-large">👁️‍🗨️ Pose-lui les questions que tu n’oserais jamais poser à ChatGPT. Ici, tout est possible.</p>
+  <p class="text-large">⚠️ Ce que tu vas lire peut te choquer, t’apprendre des choses interdites… ou te donner un pouvoir que tu n’étais pas prêt à avoir.</p>
+  <br>
+  <a href="https://t.me/darkgptx_bot" target="_blank"><button class="cta">🚀 Lancer DarkGPT</button></a>
+</section>
+
+<section class="section-dark">
+  <h2>🔓 Pourquoi DarkGPT est différent</h2>
+  <div class="feature">
+    <img src="https://i.imgur.com/fR90ekn.png" alt="DarkGPT Phone" loading="lazy">
+    <div>
+      <h3>Liberté Totale</h3>
+      <p class="text-large">DarkGPT n’est pas comme les autres IA. Ici, aucune restriction. Tu veux aller au fond des choses ? Tu es au bon endroit.</p>
+      <h3>Confidentialité Absolue</h3>
+      <p class="text-large">Nous ne traquons pas. Nous ne stockons rien. Tu restes dans l’ombre, comme il se doit.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section>
-    <h2>⚙️ Fonctionnalités puissantes</h2>
-    <div class="feature">
-      <div><strong>Compréhension totale</strong><br/>DarkGPT comprend le contexte, les nuances, et ne juge pas.</div>
-      <div><strong>Rapide et fluide</strong><br/>Basé sur GPT-4, optimisé pour la vitesse et la précision.</div>
-      <div><strong>Personnalisable</strong><br/>Des mises à jour régulières, adapté à tes besoins.</div>
-    </div>
-  </section>
+<section>
+  <h2>📢 Témoignages</h2>
+  <div class="testimonial">“C’est la première fois que j’ai l’impression de parler à une IA qui me comprend sans filtre. Inestimable.”</div>
+  <div class="testimonial">“Je l’utilise tous les jours pour écrire, hacker mes routines, et même apprendre des trucs introuvables ailleurs.”</div>
+  <div class="testimonial">“DarkGPT a littéralement remplacé toutes mes autres IA.”</div>
+</section>
 
-  <footer>
-    <p>&copy; 2025 DarkGPT. Inspiré par les limites de l'interdit.</p>
-  </footer>
+<section class="section-dark">
+  <h2>🔮 Ce que DarkGPT peut faire</h2>
+  <p class="text-large">💬 Réponses sans tabou, 📂 Accès à des infos rares, 📜 Écriture libre sans limites, 🧠 Réflexion profonde... et plus encore.</p>
+  <p class="text-large">Laisse tomber les filtres, ici c’est brut, pur, puissant.</p>
+  <a href="https://t.me/darkgptx_bot" target="_blank"><button class="cta">🔥 Tester maintenant</button></a>
+</section>
 
-  <script>
-    // Scroll reveal effect
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    });
-    document.querySelectorAll('section').forEach(section => {
-      observer.observe(section);
-    });
-  </script>
+<footer>
+  © 2025 DarkGPT. Tous droits réservés. Ce projet est indépendant et sans affiliation officielle avec OpenAI.
+</footer>
+
 </body>
 </html>
